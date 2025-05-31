@@ -19,7 +19,6 @@ jobs:
       uses: robinraju/release-downloader@v1
       with:
         latest: true
-        preRelease: true
         repository: paulov-t/Paulov.Bepinex.Framework
         fileName: 'Paulov.Bepinex.Framework.zip'
       env:
@@ -29,7 +28,6 @@ jobs:
       uses: robinraju/release-downloader@v1
       with:
         latest: true
-        preRelease: true
         repository: paulov-t/Paulov.Tarkov.Minimal
         fileName: '*v*.zip'
       env:
@@ -39,7 +37,6 @@ jobs:
       uses: robinraju/release-downloader@v1
       with:
         latest: true
-        preRelease: true
         repository: paulov-t/Paulov.Tarkov.Local
         fileName: '*v*.zip'
       env:
