@@ -41,4 +41,16 @@ jobs:
         fileName: '*v*.zip'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: package-files
+      run: |
+        Compress-Archive -Path "./" -DestinationPath Paulov.Tarkov.Package.zip
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+          draft: true
+          prerelease: true
+          files: Paulov.Tarkov.Package.zip
+   
     
