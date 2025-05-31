@@ -53,5 +53,7 @@ jobs:
           draft: true
           prerelease: true
           files: Paulov.Tarkov.Package.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    
     
