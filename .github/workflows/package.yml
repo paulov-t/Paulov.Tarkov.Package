@@ -43,6 +43,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: package-files
+      shell: pwsh
       run: |
         Compress-Archive -Path "./" -DestinationPath Paulov.Tarkov.Package.zip
 
