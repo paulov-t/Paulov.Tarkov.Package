@@ -19,10 +19,8 @@ jobs:
       uses: joutvhu/get-release@v1
       with:
         latest: true
-        # Tag name start with `v`
-        pattern: '^v.*'
-        # Including pre-release
         prerelease: true
-        html_url: https://github.com/paulov-t/Paulov.Tarkov.Minimal/releases
+        owner: paulov-t
+        repo: Paulov.Tarkov.Minimal
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
