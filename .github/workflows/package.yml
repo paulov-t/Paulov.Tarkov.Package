@@ -1,0 +1,28 @@
+# This is a basic workflow that is manually triggered
+
+name: Package Releases
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  release:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get Minimal
+      uses: joutvhu/get-release@v1
+      with:
+        latest: true
+        # Tag name start with `v`
+        pattern: '^v.*'
+        # Including pre-release
+        prerelease: true
+        html_url: https://github.com/paulov-t/Paulov.Tarkov.Minimal/releases
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
