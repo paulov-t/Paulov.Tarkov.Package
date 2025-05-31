@@ -15,12 +15,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Get Minimal
-      uses: joutvhu/get-release@v1
+    - name: get-framework
+      uses: robinraju/release-downloader@v1
       with:
         latest: true
-        prerelease: true
-        owner: paulov-t
-        repo: Paulov.Tarkov.Minimal
+        preRelease: true
+        repository: paulov-t/Paulov.Bepinex.Framework
+        fileName: 'Paulov.Bepinex.Framework.zip'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: get-minimal
+      uses: robinraju/release-downloader@v1
+      with:
+        latest: true
+        preRelease: true
+        repository: paulov-t/Paulov.Tarkov.Minimal
+        fileName: '*v*.zip'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: get-local
+      uses: robinraju/release-downloader@v1
+      with:
+        latest: true
+        preRelease: true
+        repository: paulov-t/Paulov.Tarkov.Local
+        fileName: '*v*.zip'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
